@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="index.css">
+    <title>Portafolio de imagenes</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="header">
+                <h1 class="header__title">Galería de fotos con Muuri</h1>
+                <div class="header__group-search">
+                    <input type="text" class="header__search" placeholder="Search">
+                </div>
+                <div class="categories">
+                    <a href="" class="categories__category categories_category-active" id="all">all</a>
+                    <a href="" class="categories__category" id="animal">Animal</a>
+                    <a href="" class="categories__category" id="thing">Thing</a>
+                    <a href="" class="categories__category" id="flowers">Flowers</a>
+                    <a href="" class="categories__category" id="fruit">Fruit</a>
+                </div>
+            </div>
+
+            <div class="grid" id="grid"></div>
+        </div>
+
+        <div class="overlay" id="overlay">
+            <div class="overlay__image">
+                <img src="" alt="">
+                <button class="overlay__button-close"><span class="material-icons ">highlight_off</span></button>
+            </div>
+            <p class="overlay__description"></p>
+        </div>
+    </main>
+
+    <!-- Importante que primero vaya web-animations -->
+    <script src=" https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js "> </script>
+    <!-- Importante que segundo vaya muuri -->
+    <script src=" https://cdn.jsdelivr.net/npm/muuri@0.9.3/dist/muuri.min.js "> </script>
+    <!-- Js -->
+    <script src="index.js"></script>
+</body>
+
+</html>

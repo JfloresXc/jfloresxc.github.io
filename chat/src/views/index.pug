@@ -1,0 +1,25 @@
+extends templates/basic
+include mixins/alert
+
+block main
+    .col-lg-6.mt-3.mx-auto
+        #username-wrap
+            .card
+                .card-header: h1.h3 Write your username 
+                .card-body
+                    form#form-username(action="/", method="post") 
+                        input#username-input.form-control(type="text" name="username" placeholder="Username")
+                        button.mt-3.btn.btn-primary.d-block.mx-auto(type="submit") Access
+            .username-message-error.invisible.mt-3
+                -const message = `Username already exist`
+                +alert(message)
+
+        #chat-wrap.invisible
+            nav.navbar.bg-secondary.justify-content-center
+                h1.h3= `Hello ` 
+                    span#username
+            include partials/form.pug
+
+block footer 
+    script(src="/socket.io/socket.io.js") 
+    script(src="public/js/chat.js")                    

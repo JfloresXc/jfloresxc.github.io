@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Space Grotesk", sans-serif;
+}
+
+:root {
+	--size-screen-desktop: 1200px;
+	--size-screen-tablet: 900px;
+	--size-screen-mobile: 500px;
+	--height-navbar: 80px;
+	--padding-width: 5em;
+	--colors-dark: #1a1a1a;
+	--colors-light: #fff;
+	--colors-danger: #f86c6b;
+	--colors-primary: #010f1a;
+	--colors-success: #4dbd74;
+	--colors-warning: #ffc107;
+	--colors-accent-1: #0161d2;
+	--colors-accent-2: #e29ba2;
+	--colors-grey-100: #f1f1f1;
+	--colors-grey-200: #dddddd;
+	--colors-grey-300: #c9c9c9;
+	--colors-grey-400: #b5b5b5;
+	--colors-grey-500: #a1a1a1;
+	--colors-grey-600: #888888;
+	--colors-grey-700: #747474;
+	--colors-grey-800: #565656;
+	--colors-grey-900: #383838;
+	--colors-secondary: #fad001;
+	--colors-primary-dark: #000001;
+	--colors-accent-1-dark: #0048b9;
+	--colors-accent-2-dark: #c98289;
+	--colors-primary-light: #15232e;
+	--colors-accent-1-light: #1575e6;
+	--colors-accent-2-light: #f6afb6;
+	--colors-primary-accent: #0b1924;
+	--colors-secondary-dark: #e1b700;
+	--colors-accent-1-accent: #0b6bdc;
+	--colors-accent-2-accent: #eca5ac;
+	--colors-secondary-light: #ffe415;
+	--colors-secondary-accent: #ffda0b;
+}

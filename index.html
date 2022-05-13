@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Author: Jose Flores Chamba</h1>
-    <h3>Bienvenido</h3>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Navbar Fixed</title>
+
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="css/hero.css" />
+		<link rel="stylesheet" href="css/button.css" />
+	</head>
+	<body>
+		<header class="header">
+			<nav class="navbar">
+				<li class="navbar__brand-link">
+					<a href="/">JfloresXc</a>
+				</li>
+				<ul class="navbar__links">
+					<li class="navbar__link navbar__link-actived">
+						<a href="/">Mi Perfil</a>
+					</li>
+					<li class="navbar__link">
+						<a href="/">Mis Proyectos</a>
+					</li>
+					<li class="navbar__link"><a href="/">Contacto</a></li>
+				</ul>
+				<button type="button" class="navbar__menu">
+					<span
+						class="navbar__menu-line navbar__menu-line-1"
+					></span>
+					<span
+						class="navbar__menu-line navbar__menu-line-2"
+					></span>
+					<span
+						class="navbar__menu-line navbar__menu-line-3"
+					></span>
+				</button>
+			</nav>
+		</header>
+
+		<main>
+			<div class="hero">
+				<div class="hero__container-data">
+					<h1 class="hero__title">Jose Flores</h1>
+					<div class="hero__container-description">
+						<p class="hero__description">
+							Ingeniero de Sistemas | Perú
+						</p>
+						<p class="hero__email">jfloresxc@gmail.com</p>
+					</div>
+					<button class="button hero__button">
+						<span class="button-span">Saber más</span>
+					</button>
+				</div>
+				<img
+					class="hero__image"
+					src="storage/perfil.jpg"
+					alt="Jose Flores Worker"
+				/>
+			</div>
+		</main>
+
+		<script src="js/index.js"></script>
+	</body>
 </html>

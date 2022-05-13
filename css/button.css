@@ -1,0 +1,42 @@
+.button {
+	--percent-moved-emoji: 200%;
+
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+
+	font-family: "Space Grotesk", sans-serif;
+	padding: 1.4em 1em;
+	font-size: 1.2em;
+	width: 200px;
+	position: relative;
+	transition: 0.4s ease-in-out all;
+}
+
+.button:hover {
+	background: var(--colors-warning);
+}
+
+.button::before {
+	content: "🤷‍♂️";
+	position: absolute;
+	transform: translate(calc(var(--percent-moved-emoji) * -1), -50%);
+	transition: 0.4s ease-in-out all;
+	opacity: 0;
+}
+
+.button:hover::before {
+	transform: translate(var(--percent-moved-emoji), -50%);
+	opacity: 1;
+}
+
+.button-span {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	transition: 0.4s ease-in-out all;
+}
+
+.button:hover .button-span {
+	transform: translate(-80px, -50%);
+	color: var(--colors-light);
+}

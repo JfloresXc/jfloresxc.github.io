@@ -1,0 +1,37 @@
+.footer__country,
+.footer__container-contact {
+	justify-self: end;
+	text-align: end;
+	line-height: 1.7em;
+}
+
+.footer {
+	width: 100%;
+	min-height: 430px;
+	background: var(--colors-primary-dark);
+	color: var(--colors-light);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-content: space-between;
+	padding: var(--padding-width);
+}
+
+.footer__brand {
+	font-size: 3em;
+}
+
+.footer p {
+	font-size: 1.2em;
+	width: fit-content;
+}
+
+.footer__container-contact {
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+	.footer {
+		grid-template-columns: 1fr;
+	}
+}

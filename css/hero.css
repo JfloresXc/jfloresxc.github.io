@@ -36,6 +36,19 @@
 	align-self: center;
 }
 
+.hero__button::before {
+	content: "🤷‍♂️";
+	position: absolute;
+	transform: translate(calc(var(--percent-moved-emoji) * -1), -50%);
+	transition: 0.4s ease-in-out all;
+	opacity: 0;
+}
+
+.hero__button:hover::before {
+	transform: translate(var(--percent-moved-emoji), -50%);
+	opacity: 1;
+}
+
 .hero__image {
 	width: 40%;
 	object-fit: cover;

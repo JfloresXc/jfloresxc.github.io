@@ -7,12 +7,25 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Navbar Fixed</title>
+		<title>Jose Flores</title>
+		<link
+			rel="shortcut icon"
+			href="storage/icon.png"
+			type="image/x-icon"
+		/>
 
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/navbar.css" />
 		<link rel="stylesheet" href="css/hero.css" />
 		<link rel="stylesheet" href="css/button.css" />
+		<link rel="stylesheet" href="css/icon.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/popup.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		/>
 	</head>
 	<body>
 		<header class="header">
@@ -22,12 +35,14 @@
 				</li>
 				<ul class="navbar__links">
 					<li class="navbar__link navbar__link-actived">
-						<a href="/">Mi Perfil</a>
+						<a class="popup__button">Mi Perfil</a>
 					</li>
 					<li class="navbar__link">
-						<a href="/">Mis Proyectos</a>
+						<a class="popup__button">Mis Proyectos</a>
 					</li>
-					<li class="navbar__link"><a href="/">Contacto</a></li>
+					<li class="navbar__link">
+						<a class="popup__button">Contacto</a>
+					</li>
 				</ul>
 				<button type="button" class="navbar__menu">
 					<span
@@ -53,7 +68,7 @@
 						</p>
 						<p class="hero__email">jfloresxc@gmail.com</p>
 					</div>
-					<button class="button hero__button">
+					<button class="button hero__button popup__button">
 						<span class="button-span">Saber más</span>
 					</button>
 				</div>
@@ -65,6 +80,50 @@
 			</div>
 		</main>
 
+		<footer>
+			<div class="footer">
+				<h3 class="footer__brand">JfloresXc</h3>
+				<p class="footer__country">Lima, Perú</p>
+				<ul class="icons footer__icons">
+					<li class="icon">
+						<a
+							href="https://www.instagram.com/jose_flcc/"
+							target="_blank"
+						>
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</li>
+					<li class="icon">
+						<a
+							href="https://www.facebook.com/profile.php?id=100008780072055"
+							target="_blank"
+						>
+							<i class="fa-brands fa-facebook-square"></i>
+						</a>
+					</li>
+					<li class="icon">
+						<a
+							href="https://github.com/JfloresXc"
+							target="_blank"
+						>
+							<i class="fa-brands fa-github-square"></i>
+						</a>
+					</li>
+				</ul>
+				<p class="footer__container-contact">
+					<span>+51 923692257</span>
+					<span>jfloresxc@gmail.com</span>
+				</p>
+			</div>
+		</footer>
+
+		<div class="popup" id="popup">
+			<p class="popup__message">
+				<span> 👷‍♂️ En construcción ING@ 👷‍♂️</span>
+			</p>
+		</div>
+
 		<script src="js/index.js"></script>
+		<script src="js/popup.js"></script>
 	</body>
 </html>

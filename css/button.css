@@ -6,28 +6,18 @@
 	border-radius: 10px;
 
 	font-family: "Space Grotesk", sans-serif;
-	padding: 1.4em 1em;
 	font-size: 1.2em;
+	font-weight: 600;
+	color: var(--colors-primary);
+	padding: 1.4em 1em;
 	width: 200px;
 	position: relative;
 	transition: 0.4s ease-in-out all;
+	z-index: 0;
 }
 
 .button:hover {
 	background: var(--colors-warning);
-}
-
-.button::before {
-	content: "🤷‍♂️";
-	position: absolute;
-	transform: translate(calc(var(--percent-moved-emoji) * -1), -50%);
-	transition: 0.4s ease-in-out all;
-	opacity: 0;
-}
-
-.button:hover::before {
-	transform: translate(var(--percent-moved-emoji), -50%);
-	opacity: 1;
 }
 
 .button-span {

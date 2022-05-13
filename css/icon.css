@@ -1,0 +1,14 @@
+.icons {
+	display: flex;
+	gap: 3em;
+}
+
+.icon {
+	list-style: none;
+	font-size: 1.7em;
+}
+
+.icon a {
+	text-decoration: none;
+	color: var(--colors-light);
+}

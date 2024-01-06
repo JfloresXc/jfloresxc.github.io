@@ -6,6 +6,8 @@ on:
   push:
     branches: [master]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
+  # No quiere rama main, así que mejor dejar master noma y seguir la instrucciones
+  # de la pagina oficial de astro
   workflow_dispatch:
 
 # Allow this job to clone the repo and create a page deployment

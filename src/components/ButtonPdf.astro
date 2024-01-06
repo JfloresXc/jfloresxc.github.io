@@ -1,0 +1,32 @@
+<button
+  class={`
+    popup__button
+    flex justify-center items-center gap-x-3 
+    border border-white/10 rounded-xl
+    p-2 lg:p-3  
+    bg-white/10 text-xs lg:text-base cursor-pointer
+    hover:scale-105 hover:bg-white/20 
+    transition-all duration-300 ease-in-out  
+    ${Astro.props.class}
+  `}
+>
+  <slot />
+</button>
+
+<script>
+  const popup = document.querySelector(".popup");
+
+  const popupShowClass = document
+    .querySelectorAll(".popup__button")
+    .forEach((element) => {
+      element.addEventListener("click", () => {
+        popup.classList.add("popup__show");
+      });
+    });
+
+  popup.addEventListener("click", (event) => {
+    if (event?.target?.id == "popup") {
+      popup.classList.remove("popup__show");
+    }
+  });
+</script>

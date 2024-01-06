@@ -5,11 +5,12 @@ import NextjsIcon from "../components/icons/Nextjs.astro";
 import FirebaseIcon from "../components/icons/Firebase.astro";
 import ProjectItem from "./ProjectItem.astro";
 import AngularIcon from "./icons/Angular.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
 
 const TAGS = {
   TAILWIND: {
     name: "Tailwind",
-    class: "text-white bg-blue-500",
+    class: "text-[#73bcf6] bg-[#003159]",
     icon: TailwindIcon,
   },
   REACT: {
@@ -29,8 +30,8 @@ const TAGS = {
   },
   ASTROJS: {
     name: "Astro",
-    class: "text-white",
-    icon: TailwindIcon,
+    class: "bg-white text-black",
+    icon: AstroIcon,
   },
   ANGULARJS: {
     name: "AngularJS",
@@ -53,16 +54,26 @@ const PROJECTS = [
     title: "Centro Idiomas",
     description:
       "Impartimos cursos de inglés, portugués , francés y más en los niveles básico, intermedio y avanzado, en los sistemas regular e intensivo.",
-    image: "centroidiomas-wraper.jpg",
+    image: "centroidiomas-mockup.jpg",
     linkSite: "https://centro-idiomas.vercel.app/",
     linkRepository: "https://github.com/JfloresXc/centro-idiomas",
     tags: [TAGS.REACT],
   },
   {
+    title: "Portafolio Jose Flores",
+    description:
+      "Landing Page de mi portafolio, donde podrás ver mis proyectos y habilidades. Además de poder contactarme.",
+    image: "portafolio-mockup.jpg",
+    linkSite: "https://jfloresxc.github.io/",
+    linkRepository:
+      "https://github.com/JfloresXc/jfloresxc.github.io",
+    tags: [TAGS.ASTROJS, TAGS.TAILWIND],
+  },
+  {
     title: "Comedor Untels",
     description:
       "Somos Comedor Untels, un agradable lugar que le permitirá a usted disfrutar de la mejor comida peruana y saborear exquisitos platos criollos. Tenemos una trayectoria de 15 años atendiendo a todo tipo de clientes, a quienes ofrecemos un trato amable, cordial y ordenado.",
-    image: "comedoruntels.jpg",
+    image: "comedoruntels-mockup.jpg",
     linkSite: "https://comedoruntels.vercel.app/",
     linkRepository: "https://github.com/JfloresXc/comedor-untels",
     tags: [TAGS.ANGULARJS, TAGS.FIREBASE],

@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Bagde from "../components/Bagde.astro";
 import SocialPill from "../components/SocialPill.astro";
 import LinkedinIcon from "../components/icons/Linkedin.astro";
-import GithubIcon from "../components/icons/Github.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
 import Section from "../components/Section.astro";
@@ -13,6 +12,9 @@ import ProjectIcon from "../components/icons/Project.astro";
 import Projects from "../components/Projects.astro";
 import Brand from "../components/Brand.astro";
 import TitleHero from "../components/TitleHero.astro";
+import CVIcon from "../components/icons/CV.astro";
+import Popup from "../components/Popup.astro";
+import ButtonPdf from "../components/ButtonPdf.astro";
 ---
 
 <Layout
@@ -31,7 +33,9 @@ import TitleHero from "../components/TitleHero.astro";
       </h4>
 
       <h1
-        class="text-3xl lg:text-6xl font-bold flex flex-col lg:flex-row flex-wrap justify-start items-center gap-x-4 pb-8"
+        class="text-4xl lg:text-6xl font-bold
+        flex flex-col lg:flex-row flex-wrap justify-start items-center gap-x-4 gap-y-6
+        pb-8"
       >
         <TitleHero />
         <a
@@ -45,7 +49,9 @@ import TitleHero from "../components/TitleHero.astro";
           </Bagde>
         </a>
       </h1>
-      <h2 class="text-wrap text-lg lg:text-2xl max-w-[700px]">
+      <h2
+        class="text-wrap text-center lg:text-left text-lg lg:text-2xl max-w-[700px]"
+      >
         +2 años de experiencia. <span class="dark:text-yellow-200"
           >Desarrollador Web e Ingenierio de Sistemas.</span
         > De Lima, Perú. Especializado en crear aplicaciones únicas.
@@ -54,13 +60,13 @@ import TitleHero from "../components/TitleHero.astro";
       <ul
         class="flex flex-wrap justify-center lg:justify-normal gap-4 mt-8 lg:mt-10"
       >
+        <ButtonPdf>
+          <CVIcon class="size-4 lg:size-5" />
+          Currículum Vitae
+        </ButtonPdf>
         <SocialPill href="https://www.linkedin.com/in/jfloresxc/">
           <LinkedinIcon class="size-4 lg:size-5" />
           Linkedin
-        </SocialPill>
-        <SocialPill href="https://jfloresxc.github.io/">
-          <GithubIcon class="size-4 lg:size-5" />
-          Github
         </SocialPill>
         <SocialPill href="mailto:jfloresxc@gmail.com">
           <MailIcon class="size-4 lg:size-5" />
@@ -88,7 +94,7 @@ import TitleHero from "../components/TitleHero.astro";
       </h2>
       <Projects />
     </Section>
+
+    <Popup />
   </main>
 </Layout>
-
-<style></style>

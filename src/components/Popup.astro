@@ -1,0 +1,34 @@
+<div class="popup" id="popup">
+  <iframe src="storage/josefloreschamba-cv.pdf" class="pdf"></iframe>
+</div>
+
+<style>
+  .popup,
+  .popup__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup {
+    position: fixed;
+    inset: 0;
+    padding: 2em;
+    z-index: 100;
+    backdrop-filter: blur(3px);
+    transition: 1s ease-in all;
+    display: none;
+    opacity: 0;
+  }
+
+  .pdf {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Modifiers */
+  .popup__show {
+    display: flex;
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,45 @@
+<script>
+  let nombreElement = document.querySelector(".title-hero");
+  let NOMBRE_PROPIO = "Jose Flores";
+  let NOMBRE_MARCA = "JfloresXc";
+  let SEGUNDOS = 6000;
+
+  setInterval(() => {
+    let value = nombreElement.innerHTML;
+
+    if (value == NOMBRE_PROPIO) {
+      nombreElement.innerHTML = NOMBRE_MARCA;
+    } else if (value == NOMBRE_MARCA) {
+      nombreElement.innerHTML = NOMBRE_PROPIO;
+    }
+  }, SEGUNDOS);
+</script>
+
+<span class="flex title-hero">Jose Flores</span>
+
+<style>
+  .title-hero {
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 11.6ch;
+
+    animation:
+      typing 3s steps(20) infinite alternate,
+      blink 5s steps(20) infinite;
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+</style>

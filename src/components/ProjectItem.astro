@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  linkSite: string;
+  linkRepository: string;
+  tags: any[];
+}
+
+const { title, description, image, linkSite, linkRepository, tags } =
+  Astro.props;
+---
+
+<article class="mb-10">
+  <h3 class="text-4xl font-semibold dark:text-yellow-200 mb-4">
+    {title}
+  </h3>
+  <p class="text-base mb-4">{description}</p>
+  <ul class="flex gap-x-3">
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={linkSite}
+      class="text-sm border-2 rounded-full border-primary border-b-emerald-500 hover:border-b-emerald-400 pb-3"
+      ><span
+        class="bg-emerald-600 hover:bg-emerald-500 rounded-t p-0.5 px-2"
+        >Ver Sitio</span
+      ></a
+    >
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={linkRepository}
+      class="text-sm border-2 rounded-full border-primary border-b-emerald-500 hover:border-b-emerald-400 pb-3"
+      ><span
+        class="bg-emerald-600 hover:bg-emerald-500 rounded-t p-0.5 px-2"
+        >Github</span
+      ></a
+    >
+  </ul>
+  <img
+    src={image}
+    alt={`Proyecto web de Jose Flores llamado ${title}`}
+    class="w-full rounded-lg mt-4"
+  />
+  <ul class="flex justify-end flex-wrap gap-2 mt-5">
+    {
+      tags.map((tag) => (
+        <li
+          class={`
+            text-sm 
+            px-4 py-2 
+            flex justify-center items-center gap-x-2 
+            rounded-full ${tag.class}`}
+        >
+          <tag.icon class="size-4" />
+          {tag.name}
+        </li>
+      ))
+    }
+  </ul>
+</article>

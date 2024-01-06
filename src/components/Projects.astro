@@ -1,0 +1,93 @@
+---
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import ReactIcon from "../components/icons/React.astro";
+import NextjsIcon from "../components/icons/Nextjs.astro";
+import FirebaseIcon from "../components/icons/Firebase.astro";
+import ProjectItem from "./ProjectItem.astro";
+import AngularIcon from "./icons/Angular.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind",
+    class: "text-white bg-blue-500",
+    icon: TailwindIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "text-white bg-[#0b57d0]",
+    icon: ReactIcon,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "text-white bg-[#1e88e5]",
+    icon: FirebaseIcon,
+  },
+  NEXTJS: {
+    name: "NextJS",
+    class: "text-white bg-blue-500",
+    icon: NextjsIcon,
+  },
+  ASTROJS: {
+    name: "Astro",
+    class: "text-white",
+    icon: TailwindIcon,
+  },
+  ANGULARJS: {
+    name: "AngularJS",
+    class: "text-white bg-[#dd1b16] ",
+    icon: AngularIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Notesbook",
+    description:
+      "En esta app podrás escribir tus propios capítulos, y estos a la vez conteniendo tus notas las cuales podrían ser públicas o privadas.",
+    image: "notebook-mockup.jpg",
+    linkSite: "https://notesbook.vercel.app/",
+    linkRepository: "https://github.com/JfloresXc/notesbook",
+    tags: [TAGS.REACT, TAGS.FIREBASE],
+  },
+  {
+    title: "Centro Idiomas",
+    description:
+      "Impartimos cursos de inglés, portugués , francés y más en los niveles básico, intermedio y avanzado, en los sistemas regular e intensivo.",
+    image: "centroidiomas-wraper.jpg",
+    linkSite: "https://centro-idiomas.vercel.app/",
+    linkRepository: "https://github.com/JfloresXc/centro-idiomas",
+    tags: [TAGS.REACT],
+  },
+  {
+    title: "Comedor Untels",
+    description:
+      "Somos Comedor Untels, un agradable lugar que le permitirá a usted disfrutar de la mejor comida peruana y saborear exquisitos platos criollos. Tenemos una trayectoria de 15 años atendiendo a todo tipo de clientes, a quienes ofrecemos un trato amable, cordial y ordenado.",
+    image: "comedoruntels.jpg",
+    linkSite: "https://comedoruntels.vercel.app/",
+    linkRepository: "https://github.com/JfloresXc/comedor-untels",
+    tags: [TAGS.ANGULARJS, TAGS.FIREBASE],
+  },
+];
+---
+
+{
+  PROJECTS.map(
+    ({
+      title,
+      description,
+      image,
+      linkSite,
+      linkRepository,
+      tags,
+    }) => (
+      <ProjectItem
+        title={title}
+        description={description}
+        image={"storage/projects/" + image}
+        linkSite={linkSite}
+        linkRepository={linkRepository}
+        tags={tags}
+      />
+    )
+  )
+}

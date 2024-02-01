@@ -1,84 +1,144 @@
 ---
+import LinkedinIcon from "@/components/icons/Linkedin.astro";
+import GithubIcon from "@/components/icons/Github.astro";
+import MailIcon from "@/components/icons/Mail.astro";
 import Brand from "./Brand.astro";
+import ButtonLink from "./ButtonLink.astro";
+import CVIcon from "./icons/CV.astro";
+import ButtonPdf from "./ButtonPdf.astro";
+
+const HEADERS = [
+  {
+    id: "hero",
+    title: "Sobre mí",
+  },
+  {
+    id: "experience",
+    title: "Experiencia",
+  },
+  {
+    id: "projects",
+    title: "Proyectos",
+  },
+];
 ---
 
+<style>
+  .item-active .nav-indicator {
+    width: 3rem;
+    outline-color: white;
+  }
+  .item-active .nav-text {
+    color: white;
+  }
+</style>
+
 <header
-  class="w-full sticky lg:relative top-0 dark:text-white lg:px-5 lg:py-2 lg:pt-12 mb-20 z-50"
+  class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
 >
-  <nav
-    class="hidden lg:flex
-    flex-wrap flex-row justify-center gap-x-10 gap-y-5
-    w-full"
-  >
-    <a href="/" class="hover:text-gray-600 dark:hover:text-gray-400"
-      >Inicio</a
+  <div>
+    <h1
+      class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl flex items-end gap-x-3"
     >
-    <a
-      href="#experiencia"
-      class="hover:text-gray-600 dark:hover:text-gray-400"
-      >Experiencia</a
+      <Brand class="w-10 h-10" />
+      <a href="/">Jose Flores</a>
+    </h1><h2
+      class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
     >
-    <a
-      href="#proyectos"
-      class="hover:text-gray-600 dark:hover:text-gray-400"
-      >Proyectos</a
-    >
-    <a
-      href="#contacto"
-      class="hover:text-gray-600 dark:hover:text-gray-400">Contacto</a
-    >
-  </nav>
-  <nav class="flex lg:hidden bg-white">
-    <div
-      class="flex w-full items-center justify-between p-3 px-4 bg-[#f6f7f9]"
-    >
-      <span class="text-primary font-bold text-2xl flex gap-x-2">
-        <Brand />
-        JfloresXc
-      </span>
-      <button
-        class="flex items-center px-3 py-2 mt-3 border rounded-md text-white border-gray-600 hover:text-white hover:border-gray-600"
-        id="menu-button"
-      >
-        <svg
-          class="h-3 w-3 fill-current"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>Menu</title>
-          <path
-            d="M0 0h20v2H0V0zm0 5h20v2H0V5zm0 5h20v2H0v-2zm0 5h20v2H0v-2z"
-          ></path>
-        </svg>
-      </button>
-    </div>
-    <div
-      class="absolute hidden top-16 outline-none border-none left-0 w-full"
-      id="menu"
-    >
-      <ul
-        class="p-5 bg-white font-medium text-primary text-sm flex flex-col gap-y-3"
-      >
-        <a href="/" class="py-1 hover:text-gray-400">Inicio</a>
-        <a href="#experiencia" class="block py-1 hover:text-gray-400"
-          >Experiencia</a
-        >
-        <a href="#proyectos" class="block py-1 hover:text-gray-400"
-          >Proyectos</a
-        >
-        <a href="#contacto" class="block py-1 hover:text-gray-400"
-          >Contacto</a
-        >
+      Desarrollador Web
+    </h2><p class="mt-4 max-w-xs leading-normal">
+      +2 años de experiencia. Ingeniero de Sistemas. Especializado en
+      crear aplicaciones únicas.
+    </p>
+    <nav class="nav hidden lg:block" aria-label="In-page jump links">
+      <ul class="mt-16 w-max" id="links">
+        {
+          HEADERS.map((header) => (
+            <a
+              class="flex items-center py-3 group item-header"
+              href={`/#${header.id}`}
+            >
+              <span class="nav-indicator mr-4 h-px w-8 text-gray-400  transition-all outline-dashed" />
+              <span class="nav-text text-xs font-bold uppercase tracking-widest text-gray-400 ">
+                {header.title}
+              </span>
+            </a>
+          ))
+        }
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
+  <ul
+    class="mt-8 flex items-center flex-wrap gap-2.5"
+    aria-label="Social media"
+  >
+    <li class="text-xs shrink-0">
+      <ButtonPdf href="mailto:jfloresxc@gmail.com">
+        <CVIcon class="size-4 lg:size-5" />
+        <span class="text-[15px]">Currículum</span>
+      </ButtonPdf>
+    </li>
+    <li class="text-xs shrink-0">
+      <a
+        class="p-2
+        flex justify-center items-center gap-x-2
+        text-xs lg:text-base cursor-pointer
+        border border-light
+        transition-all duration-400 ease-in-out
+        hover:bg-teal-400 hover:text-white rounded-md
+        backdrop-filter hover:border-transparent"
+        href="https://www.linkedin.com/in/bchiang7/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="LinkedIn (opens in a new tab)"
+        title="LinkedIn"
+      >
+        <LinkedinIcon class="w-5 h-5" />
+      </a>
+    </li>
+    <li class="text-xs shrink-0">
+      <ButtonLink href="mailto:jfloresxc@gmail.com" class="p-2">
+        <MailIcon class="size-4 lg:size-5" />
+        <span class="text-[15px]">jfloresxc@gmail.com</span>
+      </ButtonLink>
+    </li>
+  </ul>
 </header>
 
-<script is:inline>
-  const menuButton = document.getElementById("menu-button");
-  const menu = document.getElementById("menu");
+<script>
+  let sections: NodeListOf<HTMLElement> =
+    document.querySelectorAll("section");
+  let links: NodeListOf<HTMLElement> =
+    document.querySelectorAll("#links a");
 
-  menuButton.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+  let callback: IntersectionObserverCallback = (
+    entries,
+    observer
+  ) => {
+    for (let entry of entries) {
+      if (entry.isIntersecting) {
+        let { id } = entry.target;
+        id = `/#${id}`;
+        history.pushState({}, "", id);
+
+        links.forEach((enlace) => {
+          enlace.classList.remove("item-active");
+
+          const href = enlace.getAttribute("href");
+          if (href === id) {
+            enlace.classList.add("item-active");
+          }
+        });
+      }
+    }
+  };
+
+  let observer = new IntersectionObserver(callback, {
+    threshold: 0.1, // [0.1, 0.3]
+    rootMargin: "0px 0px -50% 0px",
+  });
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 </script>

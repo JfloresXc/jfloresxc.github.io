@@ -1,31 +1,30 @@
 <button
   class={`
-    popup__button
-    flex justify-center items-center gap-x-3 
-    border border-white/10 rounded-xl
-    p-2 lg:p-3  
-    bg-white/10 text-xs lg:text-base cursor-pointer
-    hover:scale-105 hover:bg-white/20 
-    transition-all duration-300 ease-in-out  
+     p-2.5 md:p-1.5 
+     flex justify-center items-center gap-x-2 
+     text-xs lg:text-base cursor-pointer
+     border border-light
+     transition-all duration-400 ease-in-out  
+     hover:bg-teal-400 hover:text-white rounded-md  
+     backdrop-filter hover:border-transparent
     ${Astro.props.class}
   `}
+  id="button-pdf"
 >
   <slot />
 </button>
 
 <script>
+  const button = document.getElementById("button-pdf");
+
   const popup = document.querySelector(".popup");
 
-  const popupShowClass = document
-    .querySelectorAll(".popup__button")
-    .forEach((element) => {
-      element.addEventListener("click", () => {
-        popup.classList.add("popup__show");
-      });
-    });
+  button.addEventListener("click", () => {
+    popup.classList.add("popup__show");
+  });
 
   popup.addEventListener("click", (event) => {
-    if (event?.target?.id == "popup") {
+    if ((event?.target as HTMLElement)?.id == "popup") {
       popup.classList.remove("popup__show");
     }
   });

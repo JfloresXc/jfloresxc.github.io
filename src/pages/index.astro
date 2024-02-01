@@ -1,98 +1,35 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Bagde from "../components/Bagde.astro";
-import SocialPill from "../components/SocialPill.astro";
-import LinkedinIcon from "../components/icons/Linkedin.astro";
-import MailIcon from "../components/icons/Mail.astro";
-import Experience from "../components/Experience.astro";
-import Section from "../components/Section.astro";
-import ExperiencieIcon from "../components/icons/Experiencie.astro";
-import Header from "../components/Header.astro";
-import ProjectIcon from "../components/icons/Project.astro";
-import Projects from "../components/Projects.astro";
-import Brand from "../components/Brand.astro";
-import TitleHero from "../components/TitleHero.astro";
-import CVIcon from "../components/icons/CV.astro";
-import Popup from "../components/Popup.astro";
-import ButtonPdf from "../components/ButtonPdf.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Hero from "@/components/Hero.astro";
+import Experiences from "@/components/Experiences.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Projects from "@/components/Projects.astro";
+import Cursor from "@/components/Cursor.astro";
+import Popup from "@/components/Popup.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
-<Layout
-  title="Portafolio de Jose Flores Chamba - Desarrollador y Programador Web con 2 años de experiencia"
->
-  <main>
-    <Header />
-    <Section>
-      <h4
-        class="text-xl mb-6 gap-x-3 font-semibold flex justify-center lg:justify-start items-center"
-      >
-        <Brand class="h-10 w-10" />
-        <span class="">¡Hola! mi nombre es</span>
-      </h4>
-
-      <h1
-        class="text-4xl lg:text-6xl font-bold
-        flex flex-col lg:flex-row flex-wrap justify-start items-center gap-x-4 gap-y-6
-        pb-8"
-      >
-        <TitleHero />
-        <a
-          href="https://www.linkedin.com/in/jfloresxc/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex text-center"
-        >
-          <Bagde class="bg-emerald-600">
-            Disponible para trabajar
-          </Bagde>
-        </a>
-      </h1>
-      <h2
-        class="text-wrap text-center lg:text-left text-lg lg:text-2xl max-w-[700px] mx-auto"
-      >
-        +2 años de experiencia. <span class="dark:text-yellow-200"
-          >Desarrollador Web e Ingenierio de Sistemas.</span
-        > De Lima, Perú. Especializado en crear aplicaciones únicas.
-      </h2>
-
-      <ul
-        class="flex flex-wrap justify-center lg:justify-normal gap-4 mt-8 lg:mt-10"
-      >
-        <ButtonPdf>
-          <CVIcon class="size-4 lg:size-5" />
-          Currículum Vitae
-        </ButtonPdf>
-        <SocialPill href="https://www.linkedin.com/in/jfloresxc/">
-          <LinkedinIcon class="size-4 lg:size-5" />
-          Linkedin
-        </SocialPill>
-        <SocialPill href="mailto:jfloresxc@gmail.com">
-          <MailIcon class="size-4 lg:size-5" />
-          jfloresxc@gmail.com
-        </SocialPill>
-      </ul>
-    </Section>
-
-    <Section id="experiencia">
-      <h2
-        class="text-xl lg:text-2xl font-bold flex items-center gap-x-3 mb-6"
-      >
-        <ExperiencieIcon class="size-5" />
-        <span>Experiencia</span>
-      </h2>
-      <Experience />
-    </Section>
-
-    <Section id="proyectos">
-      <h2
-        class="text-xl lg:text-2xl font-bold flex items-center gap-x-3 mb-6"
-      >
-        <ProjectIcon class="size-5" />
-        <span>Proyectos</span>
-      </h2>
-      <Projects />
-    </Section>
-
-    <Popup />
-  </main>
+<Layout title="Portfolio Jose Flores">
+  <div
+    class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0"
+  >
+    <div class="lg:flex lg:justify-between lg:gap-4">
+      <Header />
+      <main class="lg:w-1/2">
+        <SectionContainer id="hero" textHeader="Sobre mí">
+          <Hero />
+        </SectionContainer>
+        <SectionContainer id="experience" textHeader="Experiencia">
+          <Experiences />
+        </SectionContainer>
+        <SectionContainer id="projects" textHeader="Proyectos">
+          <Projects />
+        </SectionContainer>
+        <Footer />
+      </main>
+    </div>
+  </div>
+  <Cursor />
+  <Popup />
 </Layout>

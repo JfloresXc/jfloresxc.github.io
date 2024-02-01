@@ -1,7 +1,6 @@
 ---
 // Supports weights 100-900
 import "@fontsource-variable/onest";
-import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -16,23 +15,16 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/storage/favicon.ico"
-    />
+    <link rel="icon" href="storage/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body
-    class="dark:bg-primary flex flex-col justify-center items-center relative min-h-screen"
-  >
+  <body class="bg-emerald-200 dark:bg-primary dark:text-[#94A3B8]">
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="fixed top-0 z-[-2] h-screen w-screen bg-primary-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
     <slot />
-    <Footer />
   </body>
 </html>
 <style is:global>

@@ -1,0 +1,173 @@
+---
+import TailwindIcon from "@/components/icons/Tailwind.astro";
+import ReactIcon from "@/components/icons/React.astro";
+import FirebaseIcon from "@/components/icons/Firebase.astro";
+import NextjsIcon from "@/components/icons/Nextjs.astro";
+import AstroIcon from "@/components/icons/AstroIcon.astro";
+import AngularIcon from "@/components/icons/Angular.astro";
+import SqlServerIcon from "@/components/icons/SqlServer.astro";
+import PHPIcon from "@/components/icons/Php.astro";
+import CIcon from "@/components/icons/C.astro";
+import NodeIcon from "@/components/icons/Node.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind",
+    class: "text-[#73bcf6] bg-[#003159]",
+    icon: TailwindIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "text-white bg-[#0b57d0]",
+    icon: ReactIcon,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "text-white bg-[#1e88e5]",
+    icon: FirebaseIcon,
+  },
+  NEXTJS: {
+    name: "NextJS",
+    class: "text-white bg-blue-500",
+    icon: NextjsIcon,
+  },
+  ASTROJS: {
+    name: "Astro",
+    class: "bg-white text-black",
+    icon: AstroIcon,
+  },
+  ANGULARJS: {
+    name: "AngularJS",
+    class: "text-white bg-[#dd1b16] ",
+    icon: AngularIcon,
+  },
+  SQLSERVER: {
+    name: "SQLServer",
+    icon: SqlServerIcon,
+  },
+  PHPIcon: {
+    name: "PHP",
+    icon: PHPIcon,
+  },
+  CIcon: {
+    name: ".NET Framework",
+    icon: CIcon,
+  },
+  NodeIcon: {
+    name: "NodeJS",
+    icon: NodeIcon,
+  },
+};
+
+const EXPERIENCIAS = [
+  {
+    title: ".NET & Angular Stack Developer",
+    company: "Kipu",
+    linkCompany: "https://app.mikipu.com/",
+    location: "Remote",
+    startDate: "ago. 2022",
+    endDate: " ene. 2024",
+    description: `Desarrollé mejoras y correcciones en el sistema de Punto de Venta
+        para Restaurantes, Bares, Discotecas y Supermercados - Reprogramé envío de documentos electrónicos para su aceptación en la API de Sunat - Maneje un sistema de tickets para resolver problemas de clientes
+        de manera ágil y eficiente.`,
+    tags: [TAGS.ANGULARJS, TAGS.CIcon, TAGS.SQLSERVER],
+  },
+  {
+    title: "MERN Stack Developer",
+    company: "Posperu",
+    linkCompany: "https://posperu.com/",
+    location: "Presential",
+    startDate: "abr. 2022",
+    endDate: "jul. 2022",
+    description: `Dirigí el desarrollo del proyecto Software de Administración de Proyectos con interfaz web - Integré la interfaz de la web utilizando la plantilla Vuexy - Gestioné la estructura de permisos y roles para los usuarios registrados - Administré la base de datos para su uso en la aplicación`,
+    tags: [TAGS.REACT, TAGS.NodeIcon, TAGS.SQLSERVER],
+  },
+  {
+    title: "Practicante PHP Developer",
+    company: "Posperu",
+    linkCompany: "https://posperu.com/",
+    location: "Presential",
+    startDate: "mar. 2022",
+    endDate: "abr. 2022",
+    description: `Participé en el área de desarrollo y soporte en el proyecto Desarrollo de Sistema Web de Gestión de Negocio Posperu - Interactué directamente con los clientes para resolver errores y/o mejorar alcances - Refactoricé y automaticé el código para mejorar la calidad y escalabilidad del sistema`,
+    tags: [TAGS.PHPIcon, TAGS.SQLSERVER],
+  },
+];
+---
+
+<div>
+  <ol class="group/list">
+  {EXPERIENCIAS.map(({company, description, endDate, startDate, linkCompany, location, title, tags}) => (
+    <li class="mb-12">
+      <div
+        class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+      >
+        <div
+          class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"
+        >
+        </div><header
+          class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
+          aria-label="July to December 2016"
+        >
+          {startDate} — {endDate}
+        </header><div class="z-10 sm:col-span-6">
+          <h3 class="font-medium leading-snug text-slate-200">
+            <div>
+              <a
+                class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                href={linkCompany}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Software Engineer Co-op at Starry (opens in a new tab)"
+                ><span
+                  class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"
+                ></span><span
+                  >{title} ·<!-- -->
+                  <span class="inline-block"
+                    >{company}<svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                      aria-hidden="true"
+                      ><path
+                        fill-rule="evenodd"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        clip-rule="evenodd"></path></svg
+                    ></span
+                  ></span
+                ></a
+              >
+            </div>
+          </h3>
+          <p class="mt-2 text-sm leading-normal">
+            {description.split(' - ').map(topic => (
+              <span class="flex gap-x-1.5 mb-1">
+                <span>-</span>
+                <span>{topic}.</span> 
+              </span>
+            ))}
+          </p>
+          <ul
+            class="mt-2 flex flex-wrap"
+            aria-label="Technologies used"
+          >
+            {
+              tags.map(tag => (
+              <li class="mr-1.5 mt-2">
+              <div
+                class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 gap-x-2"
+              >
+                {tag.icon && <tag.icon class="h-4 w-4 mr-1" />}
+                {tag.name}
+              </div>
+            </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </li>
+  ))}
+  </ol>
+</div>

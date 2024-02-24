@@ -1,23 +1,18 @@
-const colors = require("tailwindcss/colors");
-const fontSize = require("tailwindcss/defaultTheme").fontSize;
-
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
   ],
+  darkMode: "class",
   theme: {
-    extend: {},
     colors: {
-      primary: "#0866F1",
-      "primary-dark": "#2377FF",
+      primary: "#010f1a",
+      secondary: "#03121e",
+      warning: "#FFC107",
       ...colors,
-    },
-    fontSize: {
-      ...fontSize,
-      regular: "15px",
     },
   },
   plugins: [],
-  darkMode: "class",
 };

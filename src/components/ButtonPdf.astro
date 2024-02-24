@@ -1,0 +1,31 @@
+<button
+  class={`
+     p-2.5 md:p-1.5 
+     flex justify-center items-center gap-x-2 
+     text-xs lg:text-base cursor-pointer
+     border border-light
+     transition-all duration-400 ease-in-out  
+     hover:bg-teal-600 hover:text-white rounded-md  
+     backdrop-filter hover:border-transparent
+    ${Astro.props.class}
+  `}
+  id="button-pdf"
+>
+  <slot />
+</button>
+
+<script>
+  const button = document.getElementById("button-pdf");
+
+  const popup = document.querySelector(".popup");
+
+  button.addEventListener("click", () => {
+    popup.classList.add("popup__show");
+  });
+
+  popup.addEventListener("click", (event) => {
+    if ((event?.target as HTMLElement)?.id == "popup") {
+      popup.classList.remove("popup__show");
+    }
+  });
+</script>

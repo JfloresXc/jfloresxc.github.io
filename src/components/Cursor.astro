@@ -1,17 +1,14 @@
 <div class="mover"></div>
-<div class="mover1"></div>
-<div class="mover2"></div>
-<div class="mover3"></div>
 
 <style>
-  .mover,
-  .mover1,
-  .mover2,
-  .mover3 {
-    background-color: rgb(128, 128, 128, 0.01);
-    border: blur(0.1px) solid rgba(255, 255, 255, 0.01);
-    box-shadow: inset 0 25px 70px rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(0.1px);
+  .mover {
+    background: radial-gradient(circle, rgba(128, 128, 128, 0.15) 0%, rgba(128, 128, 128, 0.08) 40%, rgba(128, 128, 128, 0.02) 70%, transparent 100%);
+    border: none;
+    box-shadow: 
+      0 0 20px rgba(128, 128, 128, 0.1),
+      0 0 40px rgba(128, 128, 128, 0.05),
+      inset 0 0 30px rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(2px);
     border-radius: 50%;
     position: fixed;
     top: 0px;
@@ -19,45 +16,13 @@
     z-index: -9999;
     will-change: transform;
     pointer-events: none;
-    /* mix-blend-mode: difference; */
   }
   .mover {
-    --size: 250px;
-    width: var(--size);
-    height: var(--size);
+    width: 80px;
+    height: 80px;
     transform: translate(
-        calc(var(--mouse-x) - 115px),
-        calc(var(--mouse-y) - 115px)
-      )
-      translateZ(0);
-    transition: none;
-  }
-  .mover1 {
-    width: 350px;
-    height: 350px;
-    transform: translate(
-        calc(var(--mouse-x) - 165px),
-        calc(var(--mouse-y) - 165px)
-      )
-      translateZ(0);
-    transition: none;
-  }
-  .mover2 {
-    width: 450px;
-    height: 450px;
-    transform: translate(
-        calc(var(--mouse-x) - 215px),
-        calc(var(--mouse-y) - 215px)
-      )
-      translateZ(0);
-    transition: none;
-  }
-  .mover3 {
-    width: 550px;
-    height: 550px;
-    transform: translate(
-        calc(var(--mouse-x) - 265px),
-        calc(var(--mouse-y) - 265px)
+        calc(var(--mouse-x) - 40px),
+        calc(var(--mouse-y) - 40px)
       )
       translateZ(0);
     transition: none;
@@ -75,22 +40,10 @@
 
 <script>
   let mover: HTMLElement = document.querySelector(".mover");
-  let mover1: HTMLElement = document.querySelector(".mover1");
-  let mover2: HTMLElement = document.querySelector(".mover2");
-  let mover3: HTMLElement = document.querySelector(".mover3");
 
   document.addEventListener("mousemove", (e) => {
     mover.style.setProperty("--mouse-x", e.clientX + "px");
     mover.style.setProperty("--mouse-y", e.clientY + "px");
-
-    mover1.style.setProperty("--mouse-x", e.clientX + "px");
-    mover1.style.setProperty("--mouse-y", e.clientY + "px");
-
-    mover2.style.setProperty("--mouse-x", e.clientX + "px");
-    mover2.style.setProperty("--mouse-y", e.clientY + "px");
-
-    mover3.style.setProperty("--mouse-x", e.clientX + "px");
-    mover3.style.setProperty("--mouse-y", e.clientY + "px");
   });
 
   //   document.addEventListener("click", (e) => {

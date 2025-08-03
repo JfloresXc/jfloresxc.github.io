@@ -27,10 +27,23 @@ import MulticolorWord from "./MulticolorWord.astro";
     personales como laborales. Y, lo mejor es que el camino continúa.
   </p>
 
-  <img
-    alt="Jose Flores Chamba - Desarrollador Web - Ponencia frente al escenario de la IEEE Untels"
-    loading="lazy"
-    class="rounde-md border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1 max-h-[220px] w-full object-cover object-center"
-    src={`/storage/ponencia-fvb.webp`}
-  />
+  <div class="image-container relative rounded-md border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1 max-h-[220px] w-full overflow-hidden" style="aspect-ratio: 400/220;">
+    <!-- Skeleton loader -->
+    <div class="skeleton-loader absolute inset-0 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-[length:200%_100%] animate-pulse">
+      <div class="skeleton-shimmer absolute inset-0 bg-gradient-to-r from-transparent via-slate-600/50 to-transparent bg-[length:200%_100%] animate-shimmer"></div>
+    </div>
+    
+    <!-- Actual image -->
+    <img
+      alt="Jose Flores Chamba - Desarrollador Web - Ponencia frente al escenario de la IEEE Untels"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      width="400"
+      height="220"
+      class="hero-image absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-300"
+      src={`/storage/ponencia-fvb.webp`}
+      onload="this.style.opacity='1'; this.parentElement.querySelector('.skeleton-loader').style.display='none';"
+    />
+  </div>
 </div>

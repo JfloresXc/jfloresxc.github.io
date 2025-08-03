@@ -1,8 +1,16 @@
-<img
-  class={`
-    rounded-full size-10
-    ${Astro.props.class}
-  `}
-  src="/storage/perfil-sinfondo.png"
-  alt="jflorexc logo"
-/>
+<div class={`image-container relative rounded-full size-10 overflow-hidden ${Astro.props.class}`}>
+  <!-- Skeleton loader -->
+  <div class="skeleton-loader absolute inset-0 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-[length:200%_100%] animate-pulse rounded-full">
+    <div class="skeleton-shimmer absolute inset-0 bg-gradient-to-r from-transparent via-slate-600/50 to-transparent bg-[length:200%_100%] animate-shimmer rounded-full"></div>
+  </div>
+  
+  <!-- Actual image -->
+  <img
+    class="absolute inset-0 w-full h-full object-cover object-center rounded-full opacity-0 transition-opacity duration-300"
+    src="/storage/perfil-sinfondo.png"
+    alt="jflorexc logo"
+    loading="eager"
+    decoding="async"
+    onload="this.style.opacity='1'; this.parentElement.querySelector('.skeleton-loader').style.display='none';"
+  />
+</div>

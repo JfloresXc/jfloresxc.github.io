@@ -147,14 +147,23 @@ const PROJECTS = [
             }
           </ul>
         </div>
-        <img
-          alt={project.title}
-          loading="lazy"
-          decoding="async"
-          data-nimg="1"
-          class="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1 max-h-[180px] w-full object-cover object-center"
-          src={`/storage/projects/${project.image}`}
-        />
+        <div class="image-container relative rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1 max-h-[180px] w-full overflow-hidden">
+          <!-- Skeleton loader -->
+          <div class="skeleton-loader absolute inset-0 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-[length:200%_100%] animate-pulse">
+            <div class="skeleton-shimmer absolute inset-0 bg-gradient-to-r from-transparent via-slate-600/50 to-transparent bg-[length:200%_100%] animate-shimmer"></div>
+          </div>
+          
+          <!-- Actual image -->
+          <img
+            alt={project.title}
+            loading="lazy"
+            decoding="async"
+            data-nimg="1"
+            class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-300"
+            src={`/storage/projects/${project.image}`}
+            onload="this.style.opacity='1'; this.parentElement.querySelector('.skeleton-loader').style.display='none';"
+          />
+        </div>
       </div>
     </li>
       })

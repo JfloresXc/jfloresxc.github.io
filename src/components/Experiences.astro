@@ -9,6 +9,8 @@ import SqlServerIcon from "@/components/icons/SqlServer.astro";
 import PHPIcon from "@/components/icons/Php.astro";
 import CIcon from "@/components/icons/C.astro";
 import NodeIcon from "@/components/icons/Node.astro";
+import AzureIcon from "@/components/icons/Azure.astro";
+import VueIcon from "@/components/icons/Vue.astro";
 
 const TAGS = {
   TAILWIND: {
@@ -57,40 +59,48 @@ const TAGS = {
     name: "NodeJS",
     icon: NodeIcon,
   },
+  AZURE: {
+    name: "Azure",
+    class: "text-white bg-[#0078d4]",
+    icon: AzureIcon,
+  },
+  VUE: {
+    name: "Vue",
+    class: "text-white bg-[#4fc08d]",
+    icon: VueIcon,
+  },
 };
 
 const EXPERIENCIAS = [
   {
-    title: ".NET & Angular Stack Developer",
-    company: "Kipu",
+    title: ".NET | ANGULAR | AZURE DEVOPS STACK",
+    company: "CLÍNICA ESPECIALIZADA MÉDICAS (CEM)",
+    linkCompany: "#",
+    location: "Remote",
+    startDate: "mar. 2025",
+    endDate: "actualidad",
+    description: `Asumí el rol de DevOps para automatizar procesos de integración y despliegue continuo - Resolví PDFs (Producto Básico Items) enfocados en mejoras y optimización de procesos - Integración de Inteligencia Artificial utilizando Azure Cognitive Services para optimizar procesos de testing`,
+    tags: [TAGS.ANGULARJS, TAGS.CIcon, TAGS.AZURE],
+  },
+  {
+    title: ".NET & ANGULAR FULL STACK DEVELOPER",
+    company: "EMPRESA KIPU",
     linkCompany: "https://app.mikipu.com/",
     location: "Remote",
     startDate: "ago. 2022",
-    endDate: " actualidad",
-    description: `Desarrollé mejoras y correcciones en el sistema de Punto de Venta
-        para Restaurantes, Bares, Discotecas y Supermercados - Reprogramé envío de documentos electrónicos para su aceptación en la API de Sunat - Maneje un sistema de tickets para resolver problemas de clientes
-        de manera ágil y eficiente.`,
-    tags: [TAGS.ANGULARJS, TAGS.CIcon, TAGS.SQLSERVER],
+    endDate: "feb. 2025",
+    description: `Desarrollé mejoras y actualizaciones en el sistema de Punto de Venta Mikipu para Restaurantes, Bares, Discotecas y Supermercados - Desarrollé mejoras y actualizaciones para la plataforma de venta y delivery de productos Posperu - Integré servicios de la nube como Firestore Cloud Messaging - Implementé servicios contables como SIIL, Facturix, ESCON Datagate`,
+    tags: [TAGS.ANGULARJS, TAGS.CIcon, TAGS.FIREBASE],
   },
   {
-    title: "MERN Stack Developer",
-    company: "Posperu",
-    linkCompany: "https://posperu.com/",
-    location: "Presential",
-    startDate: "abr. 2022",
-    endDate: "jul. 2022",
-    description: `Dirigí el desarrollo del proyecto Software de Administración de Proyectos con interfaz web - Integré la interfaz de la web utilizando la plantilla Vuexy - Gestioné la estructura de permisos y roles para los usuarios registrados - Administré la base de datos para su uso en la aplicación`,
-    tags: [TAGS.REACT, TAGS.NodeIcon, TAGS.SQLSERVER],
-  },
-  {
-    title: "Practicante PHP Developer",
-    company: "Posperu",
+    title: "MERN FULL-STACK DEVELOPER",
+    company: "EMPRESA POSPERU",
     linkCompany: "https://posperu.com/",
     location: "Presential",
     startDate: "mar. 2022",
-    endDate: "abr. 2022",
-    description: `Participé en el área de desarrollo y soporte en el proyecto Desarrollo de Sistema Web de Gestión de Negocio Posperu - Interactué directamente con los clientes para resolver errores y/o mejorar alcances - Refactoricé y automaticé el código para mejorar la calidad y escalabilidad del sistema`,
-    tags: [TAGS.PHPIcon, TAGS.SQLSERVER],
+    endDate: "jul. 2022",
+    description: `Dirigí el desarrollo del proyecto Software de Administración de Proyectos con interfaz web - Utilicé los frameworks React, NodeJs y base de datos SQLServer en la implementación - Gestioné la estructura de permisos y roles para los usuarios registrados - Desarrollé módulos administrativos para el proyecto Desarrollo de Sistema Web de Gestión de Negocio Posperu`,
+    tags: [TAGS.REACT, TAGS.NodeIcon, TAGS.SQLSERVER],
   },
 ];
 ---
